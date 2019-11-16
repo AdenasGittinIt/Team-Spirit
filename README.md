@@ -1,7 +1,7 @@
 # Team-Spirit
 A Node CLI that displays an HTML summary of a developer team based on user input.
 
-User Story
+**User Story**
 
 
 **As a** manager
