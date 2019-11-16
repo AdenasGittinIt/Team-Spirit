@@ -15,16 +15,7 @@
 // No limit to the number of team members that can be input
 // three types of team members
 
-//Employee Class
-  //this will contain all of the characteristics that each EE type has in common
-  //name
-  //id
-  //title
-  //getName()
-  //getId()
-  //getEmail()
-  //getRole() returns EE
-  //projectName()??  if the project name is the same as other team members, display on same page?
+
 
 
 //Manager Class
