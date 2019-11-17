@@ -1,9 +1,29 @@
 //Goal: User can use the CLI to generate an HTML page that displays information about their team. 
 
-//create variables for the apps dependancies
+//Prompt user for information about their team. 
+  //Enter a team member's first and last name to get started.
+  //what is this team member's role? 
+    //instantiate a new Mngr, Engnr or Intern based on response 
+    //what is name?
+    //what is id#
+    //what is email?
 
-//propt the user to build an engineering team.
-  //team consists of a single manager and any number of engineers and inters
+  //Would you like to add another team member?
+      //if true prompt for the next team member
+      //else render html
+
+  //The user should not be allowed to add multiple managers to a sigle team. 
+
+//save the responses to new instance of a manager, engineer or intern
+
+//the class shouldn't be instantiated until after the user has completed the prompts.
+
+//the html should not be rendered or created until after the user has entered all team members.
+ //I can create the HTML with the first instance and then append 
+
+
+
+
 
 // Team members' name (perhaps click the team members name to go to their git hub)
 // Prompt for member's EE ID#
@@ -14,8 +34,6 @@
 
 // No limit to the number of team members that can be input
 // three types of team members
-
-
 
 
 //Manager Class
@@ -59,8 +77,5 @@
 
 // make methods simple so they are easy to test
 // 
-
-
-
 
 
