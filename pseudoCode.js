@@ -2,7 +2,7 @@
 
 //Prompt user for information about the team manager and then the rest of the team
 
-// first prompt the user then reder or apend to the page
+// first prompt the user then render or apend to the page
 
 
   //Enter a team member's first and last name to get started.
