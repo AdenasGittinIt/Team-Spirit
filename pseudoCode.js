@@ -1,6 +1,12 @@
 //Goal: User can use the CLI to generate an HTML page that displays information about their team. 
 
-//Prompt user for information about their team. 
+//Prompt user for information about the team manager and then the rest of the team
+
+// first prompt the user then reder or apend to the page
+
+
+
+
   //Enter a team member's first and last name to get started.
   //what is this team member's role? 
     //instantiate a new Mngr, Engnr or Intern based on response 
