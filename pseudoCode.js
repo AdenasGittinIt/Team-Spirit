@@ -5,8 +5,6 @@
 // first prompt the user then reder or apend to the page
 
 
-
-
   //Enter a team member's first and last name to get started.
   //what is this team member's role? 
     //instantiate a new Mngr, Engnr or Intern based on response 
