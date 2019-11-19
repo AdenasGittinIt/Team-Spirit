@@ -4,8 +4,8 @@ const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-const team = [ ];
-const teamIDs = [ ];
+const team = [];
+const teamIDs = [];
 
 
 // Since every team will have one manager, I'll first prompt the user to add a manager 
@@ -41,13 +41,14 @@ promptForManager()
       res.role,
       res.officeNumber,
       );
-    console.log(manager)
+  
+    team.push(manager);
+    teamIDs.push(manager.id)
+    console.log(team);
+    console.log(teamIDs);
   })
 
-
-// .then(
-//   console.log(answers)
-// )
+// Now that the manager is saved to the empty array, I want to 
   
 
   
