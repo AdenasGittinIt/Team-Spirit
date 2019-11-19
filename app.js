@@ -32,7 +32,7 @@ function managerInfo() {
 }
 
 // I want to prompt the user for the type of team member they want to add
-async function roleInfo() {
+function roleInfo() {
   return inquirer.prompt([{
     type: "list",
     name: "role",
@@ -43,6 +43,42 @@ async function roleInfo() {
       "Build Team!"
     ]
   }])
+  .then(function (res) {
+    switch (res.role) {
+      case "Engineer" :
+      engineerPrompt()
+      .then(function(res) {
+        engineer = new Engineer ( 
+          res.name,
+          res.id,
+          res.email,
+          res.github,
+          res.role
+        )
+        team.push(engineer);
+        teamIDs.push(engineer.id);
+        roleInfo();
+      })
+     break; 
+     case "Intern" :
+      internPrompt()
+      .then(function(res) {
+        intern = new Intern (
+          res.name,
+          res.id,
+          res.email,
+          res.school,
+          res.role
+        )
+        team.push(intern);
+        teamIDs.push(intern.id);
+        roleInfo();
+        })
+        break;
+        case "Build Team!" :
+          console.log(team);
+      }
+    })
 }
 
 function engineerPrompt() {
@@ -110,42 +146,8 @@ managerInfo()
     
     console.log(`Great! The manager has been added to the team.
     `);
+
     roleInfo()
-    .then(function (res) {
-      switch (res.role) {
-        case "Engineer" :
-        engineerPrompt()
-        .then(function(res) {
-          engineer = new Engineer ( 
-            res.name,
-            res.id,
-            res.email,
-            res.github,
-            res.role
-          )
-          team.push(engineer);
-          teamIDs.push(engineer.id);
-        })
-       break; 
-       case "Intern" :
-        internPrompt()
-        .then(function(res) {
-          intern = new Intern (
-            res.name,
-            res.id,
-            res.email,
-            res.school,
-            res.role
-          )
-          team.push(intern);
-          teamIDs.push(intern.id);
-          console.log(team);
-          })
-          break;
-          case "Build Team!" :
-            console.log(team)
-        }
-      })
   })
 
   
