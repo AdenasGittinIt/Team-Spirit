@@ -6,9 +6,9 @@ const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const team = [ ];
 const teamIDs = [ ];
-let addToTeam = true;
 
-// Since every team will have one manager, I'll first prompt the user to add a manager 
+
+// Since every team will have only one manager, I'll first prompt the user to add a manager 
 function managerInfo() {
   return inquirer
     .prompt([{
@@ -31,12 +31,13 @@ function managerInfo() {
     ])
 }
 
-// I want to prompt the user for the type of team member they want to add
+// Since the user can enter an unlimited number of interns and engineers to their team, I need to "loop" through roleInfo until the user is finished adding team members
+
 function roleInfo() {
   return inquirer.prompt([{
     type: "list",
     name: "role",
-    message: `Please select the next team member's role.  If you are finished adding team members, selct 'Build Team'`,
+    message: `Please select the next team member's role.  If you're all done adding team members, select 'Build Team!'`,
     choices: [
       "Engineer",
       "Intern",
@@ -46,7 +47,7 @@ function roleInfo() {
   .then(function (res) {
     switch (res.role) {
       case "Engineer" :
-      engineerPrompt()
+      engineerInfo()
       .then(function(res) {
         engineer = new Engineer ( 
           res.name,
@@ -61,7 +62,7 @@ function roleInfo() {
       })
      break; 
      case "Intern" :
-      internPrompt()
+      internInfo()
       .then(function(res) {
         intern = new Intern (
           res.name,
@@ -76,12 +77,13 @@ function roleInfo() {
         })
         break;
         case "Build Team!" :
+          // this is where I'll add the fuction to generate the HTML
           console.log(team);
       }
     })
 }
 
-function engineerPrompt() {
+function engineerInfo() {
   return inquirer
   .prompt([{
     type: "input",
@@ -104,7 +106,7 @@ function engineerPrompt() {
   ])
 }
 
-function internPrompt() {
+function internInfo() {
   return inquirer
   .prompt([{
     type: "input",
@@ -128,8 +130,7 @@ function internPrompt() {
 }
 
 // Build an instance of the manager based on their response
-console.log(`Welcome to the team building excercise!
-Let's start with the manager...`);
+console.log(`Welcome to the team building excercise! Start by adding the team's manager...`);
 
 managerInfo()
   .then(function (res) {
@@ -148,12 +149,13 @@ managerInfo()
     `);
 
     roleInfo()
+
   })
 
   
 
   
-// Since the user can enter an infinite number of interns and engineers to their team, I need to loop through roleInfo until user is finished evaluates to true.
+
 
 
 
