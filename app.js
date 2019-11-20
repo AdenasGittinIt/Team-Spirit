@@ -4,6 +4,7 @@ const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+const generateHtml = require("./lib/BuildHtml");
 const team = [ ];
 const teamIDs = [ ];
 
@@ -77,8 +78,8 @@ function roleInfo() {
         })
         break;
         case "Build Team!" :
-          // this is where I'll add the fuction to generate the HTML
-          console.log(team);
+          //This is where I'll put the build team function
+          generateHtml(team);
       }
     })
 }
@@ -130,7 +131,8 @@ function internInfo() {
 }
 
 // Build an instance of the manager based on their response
-console.log(`Welcome to the team building excercise! Start by adding the team's manager...`);
+console.log(`Welcome to the team building excercise! 
+Start by adding the team's manager...`);
 
 managerInfo()
   .then(function (res) {
