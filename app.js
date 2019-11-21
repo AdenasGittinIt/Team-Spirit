@@ -45,45 +45,46 @@ function roleInfo() {
       "Build Team!"
     ]
   }])
-  .then(function (res) {
-    switch (res.role) {
-      case "Engineer" :
-      engineerInfo()
-      .then(function(res) {
-        engineer = new Engineer ( 
-          res.name,
-          res.id,
-          res.email,
-          res.github,
-          res.role
-        )
-        team.push(engineer);
-        teamIDs.push(engineer.id);
-        roleInfo();
-      })
-     break; 
-     case "Intern" :
-      internInfo()
-      .then(function(res) {
-        intern = new Intern (
-          res.name,
-          res.id,
-          res.email,
-          res.school,
-          res.role
-        )
-        team.push(intern);
-        teamIDs.push(intern.id);
-        roleInfo();
-        })
-        break;
-        case "Build Team!" :
-          //This is where I'll put the build team function
-          generateHtml(team);
+    .then(function (res) {
+      switch (res.role) {
+        case "Engineer":
+          engineerInfo()
+            .then(function (res) {
+              engineer = new Engineer(
+                res.name,
+                res.id,
+                res.email,
+                res.github,
+                res.role
+              )
+              team.push(engineer);
+              teamIDs.push(engineer.id);
+              roleInfo();
+            })
+          break;
+        case "Intern":
+          internInfo()
+            .then(function (res) {
+              intern = new Intern(
+                res.name,
+                res.id,
+                res.email,
+                res.school,
+                res.role
+              )
+              team.push(intern);
+              teamIDs.push(intern.id);
+              roleInfo();
+            })
+          break;
+        case "Build Team!":
+          generateHtml(team)
+          break;
       }
     })
 }
 
+// Build an instance of a team member based on their response
 function engineerInfo() {
   return inquirer
   .prompt([{
@@ -161,9 +162,9 @@ managerInfo()
 
 
 
-// Build an instance of a team member based on their response
 
 
-// after they've selected the type team member they want to add I need to ask whether they want to add an
+
+
 
 
